@@ -1,32 +1,75 @@
 .App {
   text-align: center;
+  color: #fff;  
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+nav {
+  background: #353a3f;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav_bar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 85vw;
+  margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
-.App-link {
-  color: #61dafb;
+li {
+  list-style-type: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul {
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30vw;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger:before {
+  content: '\2630';
+}
+
+.hidden_menu {
+  background: #353a3f;
+  transition: ease 2s;
+  position: relative;
+  z-index: 1;
+  min-height: 60px;
+  text-align: start;
+}
+
+.hidden_menu li {
+  padding: 5px 0;
+}
+
+#open {
+  transform: translate3d(0, 0, 0);
+  transition: ease .3s;  
+  height: max-content;  
+}
+#close {
+  transform: translate3d(0, -60px, 0);
+  transition: ease .3s;  
+}
+
+@media (max-width: 800px) {
+  .menu {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .burger {
+    display: block;
   }
 }
